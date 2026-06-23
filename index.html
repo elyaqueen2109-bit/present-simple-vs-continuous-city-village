@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Lesson 2 – Present Simple vs Present Continuous</title>
+  <title>Lessons 2–3 – Present Simple vs Present Continuous</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -26,6 +26,24 @@
     h1 { font-size: clamp(22px, 5vw, 32px); color: #0f172a; margin-bottom: 8px; }
     h2 { font-weight: 600; font-size: clamp(16px, 3.5vw, 20px); margin-bottom: 8px; color: #1e293b; }
     h3 { font-weight: 600; font-size: clamp(14px, 3vw, 18px); margin-bottom: 8px; color: #334155; }
+
+    .review-link {
+      display: inline-block;
+      background: #e0e7ff;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: clamp(13px, 2.2vw, 15px);
+      margin-bottom: 15px;
+      color: #3730a3;
+      text-decoration: none;
+      font-weight: 600;
+      border: 2px solid #c7d2fe;
+      transition: 0.2s;
+    }
+    .review-link:hover {
+      background: #c7d2fe;
+      transform: scale(1.03);
+    }
 
     .main-tabs {
       display: flex; gap: 6px; margin-bottom: 18px;
@@ -74,6 +92,13 @@
     .btn-green:hover { background: #15803d; }
     .btn-red { background: #dc2626; color: white; }
     .btn-red:hover { background: #b91c1c; }
+    .btn-outline {
+      background: white; border: 2px solid #2563eb; color: #2563eb;
+      padding: 8px 18px; border-radius: 20px; font-weight: 600; cursor: pointer;
+      font-size: clamp(12px, 2vw, 15px);
+    }
+    .btn-outline:hover { background: #eff6ff; }
+    .btn-outline.active { background: #2563eb; color: white; }
     .hidden { display: none; }
 
     .game-section { margin-top: 12px; }
@@ -137,7 +162,7 @@
       border: 3px solid #fbbf24; border-radius: 18px;
       padding: 16px 20px; margin: 10px auto;
       box-shadow: 0 6px 15px rgba(251, 191, 36, 0.35);
-      display: flex; align-items: center; gap: 12px;
+      display: flex; align-items: center; gap: 10px;
       flex-wrap: wrap; max-width: 600px;
       font-size: clamp(18px, 3.5vw, 24px); color: #1e293b;
     }
@@ -204,6 +229,13 @@
       border-radius: 16px; margin: 15px 0;
       border: 2px solid #e2e8f0;
     }
+    .reading-text.hidden-text { display: none; }
+    .reading-text .highlight {
+      background: #fef3c7;
+      padding: 4px 0;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
 
     .word-bank {
       display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin: 10px 0;
@@ -256,7 +288,6 @@
       font-size: clamp(16px, 3.5vw, 24px); font-weight: bold;
       box-shadow: 0 2px 10px rgba(0,0,0,0.2); pointer-events: none;
     }
-    .snowball-list p { font-size: clamp(14px, 2.5vw, 20px); margin: 4px 0; }
 
     .sort-column {
       display: flex; flex-direction: column; gap: 10px;
@@ -275,6 +306,30 @@
     .sort-sentence:hover { background: #f1f5f9; transform: scale(1.02); }
     .sort-sentence.selected { border-color: #2563eb; background: #dbeafe; }
 
+    .match-column {
+      display: flex; flex-direction: column; gap: 8px;
+      min-width: 150px;
+    }
+    .match-item {
+      padding: 8px 14px; border-radius: 12px;
+      font-size: clamp(13px, 2vw, 16px); font-weight: 500;
+      cursor: pointer; border: 2px solid #e2e8f0;
+      background: #f8fafc; text-align: center;
+      transition: 0.2s;
+    }
+    .match-item:hover { background: #f1f5f9; transform: scale(1.02); }
+    .match-item.selected { border-color: #2563eb; background: #dbeafe; }
+    .match-item.matched { border-color: #16a34a; background: #dcfce7; }
+
+    .retell-plan {
+      background: #f0f9ff; border: 2px solid #bae6fd;
+      border-radius: 16px; padding: 15px 20px; margin: 15px 0;
+      font-size: clamp(14px, 2.3vw, 17px); line-height: 1.8;
+    }
+    .retell-hint { color: #2563eb; font-weight: 500; }
+    .retell-hidden { display: none; }
+    .level-btns { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin: 10px 0; }
+
     @media (max-width: 600px) {
       .container { padding: 12px; border-radius: 18px; }
       .main-tabs { gap: 4px; }
@@ -288,14 +343,17 @@
 </head>
 <body>
 <div class="container">
-  <h1>📚 Lesson 2: Present Simple vs Present Continuous</h1>
+  <h1>📚 Lessons 2–3: City vs Village — Present Simple & Present Continuous</h1>
+  
+  <a href="https://elyaqueen2109-bit.github.io/city-village-workbook/" target="_blank" class="review-link">
+    🔗 Need to review? Open Lesson 1: Vocabulary & Grammar (to be, have got)
+  </a>
 
   <div class="main-tabs">
     <button class="tab-btn active" data-tab="tab-warmup">Warm‑up</button>
     <button class="tab-btn" data-tab="tab-grammar">Grammar</button>
     <button class="tab-btn" data-tab="tab-practice">Practice</button>
     <button class="tab-btn" data-tab="tab-reading">Reading</button>
-    <button class="tab-btn" data-tab="tab-wheel">Adverb Wheel</button>
   </div>
 
   <!-- ========== WARM‑UP ========== -->
@@ -376,9 +434,10 @@
 
     <div class="main-tabs" style="margin-top:20px;">
       <button class="tab-btn grammar-btn active" data-grammar="gram-choose">Choose Tense</button>
-      <button class="tab-btn grammar-btn" data-grammar="gram-negq">Make Negative & Question</button>
+      <button class="tab-btn grammar-btn" data-grammar="gram-negq">Negative & Question</button>
       <button class="tab-btn grammar-btn" data-grammar="gram-correct">Correct Mistake</button>
       <button class="tab-btn grammar-btn" data-grammar="gram-unscramble">Make Sentence</button>
+      <button class="tab-btn grammar-btn" data-grammar="gram-wheel">Adverb Wheel</button>
     </div>
 
     <div id="gram-choose" class="game-section active">
@@ -403,6 +462,30 @@
       <h3>Put the words in the correct order</h3>
       <div id="unscrambleContainer"></div>
       <button class="btn btn-yellow" id="nextUnscrambleBtn">Next</button>
+    </div>
+
+    <div id="gram-wheel" class="game-section hidden">
+      <h3>Adverb Wheel: Put the Adverb Correctly</h3>
+      <p style="color: #64748b; margin-bottom: 10px;">Spin the wheel, get an adverb, and rewrite the sentence with it in the correct place.</p>
+      
+      <div class="collapsible-header" id="toggleAdverbRules">
+        📖 Adverb Rules (click to show/hide) <span id="toggleAdverbIcon">▼</span>
+      </div>
+      <div class="collapsible-body open" id="adverbRulesBody">
+        <div class="transform-card" style="background:#fef3c7;">
+          <p style="font-size:clamp(14px,2.5vw,17px);line-height:1.6;">
+            <strong>Adverbs of frequency (always, usually, often, sometimes, never):</strong><br>
+            ➜ After <strong>to be</strong> (am/is/are): The city <strong>is always</strong> noisy.<br>
+            ➜ Before other verbs: People <strong>usually walk</strong> fast.<br><br>
+            <strong>Time expressions (now, at the moment, every day):</strong><br>
+            ➜ Usually at the end: The cars are moving <strong>now</strong>.
+          </p>
+        </div>
+      </div>
+
+      <div class="wheel-wrapper"><canvas id="wheelCanvas" width="360" height="360"></canvas><div class="wheel-center" id="wheelCenter"></div></div>
+      <button class="btn btn-blue" id="spinBtn">🎡 Spin!</button>
+      <div id="adverbTaskContainer" style="margin-top:15px;"></div>
     </div>
   </div>
 
@@ -441,34 +524,31 @@
     
     <img src="moscow.jpg" alt="Moscow" class="img-moscow" onerror="imgFallback(this)">
     
-    <div class="reading-text">
-      <p>Moscow is the capital of Russia. It is one of the biggest cities in Europe. More than 12 million people live here.</p>
-      <p>Every day, Moscow is full of life. The streets are always crowded with people and cars. There is <strong>heavy traffic</strong>, especially in the morning and in the evening. People usually walk fast because they are in a hurry. The city has got a lot of tall buildings, modern shopping centres, and beautiful old churches.</p>
-      <p>Look at Red Square now! Tourists <strong>are taking</strong> photos. Some people <strong>are walking</strong> near the Kremlin. The bells of the Spasskaya Tower <strong>are ringing</strong> at the moment.</p>
-      <p>Moscow has got convenient public transport. You can travel by metro, bus, or tram. The Moscow Metro is very beautiful — some stations look like museums! There are also many parks and green zones. In summer, people often go to Gorky Park or VDNKh. They walk, ride bikes, and enjoy the fresh air.</p>
-      <p>But life in a big city is not always easy. The cost of living is high. There is constant noise and pollution. Some people feel tired of the <strong>hustle and bustle</strong>.</p>
-      <p>However, Moscow never sleeps. At night, the lights are shining, and the city is still alive.</p>
+    <div style="text-align:center;margin:10px 0;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+      <button class="btn btn-yellow" id="toggleTextBtn">📖 Show/Hide Text</button>
+      <button class="btn btn-blue" id="audioBtn">🔊 Play Audio</button>
+    </div>
+    
+    <div class="reading-text" id="readingText">
+      <p class="text-sentence">Moscow is the capital of Russia. It is one of the biggest cities in Europe. More than 12 million people live here.</p>
+      <p class="text-sentence">Every day, Moscow is full of life. The streets are always crowded with people and cars. There is <strong>heavy traffic</strong>, especially in the morning and in the evening. People usually walk fast because they are in a hurry. The city has got a lot of tall buildings, modern shopping centres, and beautiful old churches.</p>
+      <p class="text-sentence">Look at Red Square now! Tourists <strong>are taking</strong> photos. Some people <strong>are walking</strong> near the Kremlin. The bells of the Spasskaya Tower <strong>are ringing</strong> at the moment.</p>
+      <p class="text-sentence">Moscow has got convenient public transport. You can travel by metro, bus, or tram. The Moscow Metro is very beautiful — some stations look like museums! There are also many parks and green zones. In summer, people often go to Gorky Park or VDNKh. They walk, ride bikes, and enjoy the fresh air.</p>
+      <p class="text-sentence">But life in a big city is not always easy. The cost of living is high. There is constant noise and pollution. Some people feel tired of the <strong>hustle and bustle</strong>.</p>
+      <p class="text-sentence">However, Moscow never sleeps. At night, the lights are shining, and the city is still alive.</p>
     </div>
 
     <div class="main-tabs" style="margin-top:15px;">
-      <button class="tab-btn reading-btn active" data-reading="read-truefalse">True/False</button>
+      <button class="tab-btn reading-btn active" data-reading="read-sort">Sort Sentences</button>
+      <button class="tab-btn reading-btn" data-reading="read-truefalse">True/False</button>
+      <button class="tab-btn reading-btn" data-reading="read-complete">Complete Sentences</button>
+      <button class="tab-btn reading-btn" data-reading="read-match">Match Halves</button>
       <button class="tab-btn reading-btn" data-reading="read-questions">Questions</button>
-      <button class="tab-btn reading-btn" data-reading="read-sort">Sort Sentences</button>
+      <button class="tab-btn reading-btn" data-reading="read-retell">Retelling</button>
     </div>
 
-    <div id="read-truefalse" class="game-section active">
-      <h3>True or False?</h3>
-      <div id="tfContainer"></div>
-      <button class="btn btn-yellow" id="nextTFBtn">Next</button>
-    </div>
-
-    <div id="read-questions" class="game-section hidden">
-      <h3>Answer the questions</h3>
-      <div id="questionsContainer"></div>
-      <button class="btn btn-yellow" id="nextQBtn">Next</button>
-    </div>
-
-    <div id="read-sort" class="game-section hidden">
+    <!-- Sort Sentences -->
+    <div id="read-sort" class="game-section active">
       <h3>Sort sentences into Present Simple and Present Continuous</h3>
       <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center;margin:15px 0;">
         <div class="sort-column" id="psColumn" style="background:#dbeafe;">
@@ -486,31 +566,76 @@
       <p id="sortFeedback" class="feedback"></p>
       <button class="btn btn-yellow" id="resetSortBtn">Reset</button>
     </div>
-  </div>
 
-  <!-- ========== ADVERB WHEEL ========== -->
-  <div id="tab-wheel" class="tab-content">
-    <h2>Adverb Wheel: Put the Adverb Correctly</h2>
-    <p style="color: #64748b; margin-bottom: 10px;">Spin the wheel, get an adverb, and rewrite the sentence with it in the correct place.</p>
-    
-    <div class="collapsible-header" id="toggleAdverbRules">
-      📖 Adverb Rules (click to show/hide) <span id="toggleAdverbIcon">▼</span>
+    <!-- True/False -->
+    <div id="read-truefalse" class="game-section hidden">
+      <h3>True or False?</h3>
+      <div id="tfContainer"></div>
+      <button class="btn btn-yellow" id="nextTFBtn">Next</button>
     </div>
-    <div class="collapsible-body open" id="adverbRulesBody">
-      <div class="transform-card" style="background:#fef3c7;">
-        <p style="font-size:clamp(14px,2.5vw,17px);line-height:1.6;">
-          <strong>Adverbs of frequency (always, usually, often, sometimes, never):</strong><br>
-          ➜ After <strong>to be</strong> (am/is/are): The city <strong>is always</strong> noisy.<br>
-          ➜ Before other verbs: People <strong>usually walk</strong> fast.<br><br>
-          <strong>Time expressions (now, at the moment, every day):</strong><br>
-          ➜ Usually at the end: The cars are moving <strong>now</strong>.
-        </p>
+
+    <!-- Complete Sentences -->
+    <div id="read-complete" class="game-section hidden">
+      <h3>Complete the sentences</h3>
+      <p style="color: #64748b; margin-bottom: 10px;">Fill in the gaps with the correct words from the text.</p>
+      <div id="completeContainer"></div>
+      <button class="btn btn-yellow" id="nextCompleteBtn">Next</button>
+    </div>
+
+    <!-- Match Halves -->
+    <div id="read-match" class="game-section hidden">
+      <h3>Match the sentence halves</h3>
+      <p style="color: #64748b; margin-bottom: 10px;">Click the beginning, then click the correct ending.</p>
+      <div id="matchContainer"></div>
+      <p id="matchFeedback" class="feedback"></p>
+      <button class="btn btn-yellow" id="resetMatchBtn">Reset</button>
+    </div>
+
+    <!-- Questions -->
+    <div id="read-questions" class="game-section hidden">
+      <h3>Answer the questions</h3>
+      <div id="questionsContainer"></div>
+      <button class="btn btn-yellow" id="nextQBtn">Next</button>
+    </div>
+
+    <!-- Retelling -->
+    <div id="read-retell" class="game-section hidden">
+      <h3>Retell the text</h3>
+      <p style="color: #64748b; margin-bottom: 10px;">Use the plan to retell the text about Moscow. Switch levels to make it harder!</p>
+      
+      <div class="level-btns">
+        <button class="btn-outline active level-btn" data-level="1">Level 1: Full support</button>
+        <button class="btn-outline level-btn" data-level="2">Level 2: Questions only</button>
+        <button class="btn-outline level-btn" data-level="3">Level 3: Key words only</button>
+      </div>
+
+      <div id="retellLevel1" class="retell-plan">
+        <p>1. What is Moscow? <span class="retell-hint">(capital, 12 million, biggest)</span></p>
+        <p>2. What are the streets like every day? <span class="retell-hint">(crowded, heavy traffic, walk fast)</span></p>
+        <p>3. What is happening at Red Square now? <span class="retell-hint">(tourists taking photos, bells ringing)</span></p>
+        <p>4. What transport does Moscow have? <span class="retell-hint">(metro, bus, tram, beautiful stations)</span></p>
+        <p>5. Where do people go in summer? <span class="retell-hint">(Gorky Park, VDNKh, ride bikes, fresh air)</span></p>
+        <p>6. Why is life not always easy? <span class="retell-hint">(cost of living, noise, pollution)</span></p>
+        <p>7. Does Moscow sleep at night? <span class="retell-hint">(never sleeps, lights shining)</span></p>
+      </div>
+      <div id="retellLevel2" class="retell-plan retell-hidden">
+        <p>1. What is Moscow?</p>
+        <p>2. What are the streets like every day?</p>
+        <p>3. What is happening at Red Square now?</p>
+        <p>4. What transport does Moscow have?</p>
+        <p>5. Where do people go in summer?</p>
+        <p>6. Why is life not always easy?</p>
+        <p>7. Does Moscow sleep at night?</p>
+      </div>
+      <div id="retellLevel3" class="retell-plan retell-hidden">
+        <p>capital · 12 million · biggest / crowded · heavy traffic · walk fast / tourists · photos · bells / metro · bus · tram · beautiful stations / Gorky Park · VDNKh · ride bikes · fresh air / cost of living · noise · pollution / never sleeps · lights shining</p>
+      </div>
+      
+      <div class="transform-card" style="background:#f8fafc;">
+        <p style="text-align:center;font-size:clamp(16px,2.5vw,20px);font-weight:bold;">🗣️ Retell the text orally!</p>
+        <p style="text-align:center;color:#64748b;">Teacher checks your retelling.</p>
       </div>
     </div>
-
-    <div class="wheel-wrapper"><canvas id="wheelCanvas" width="360" height="360"></canvas><div class="wheel-center" id="wheelCenter"></div></div>
-    <button class="btn btn-blue" id="spinBtn">🎡 Spin!</button>
-    <div id="adverbTaskContainer" style="margin-top:15px;"></div>
   </div>
 </div>
 
@@ -540,21 +665,88 @@
   setupSubTabs('.practice-btn', 'tab-practice');
   setupSubTabs('.reading-btn', 'tab-reading');
 
-  // ========== СВОРАЧИВАЕМЫЕ ПРАВИЛА ==========
-  document.getElementById('toggleRules').addEventListener('click', () => {
-    const body = document.getElementById('rulesBody');
-    const icon = document.getElementById('toggleIcon');
-    body.classList.toggle('open');
-    icon.textContent = body.classList.contains('open') ? '▼' : '▶';
-  });
-  document.getElementById('toggleAdverbRules').addEventListener('click', () => {
-    const body = document.getElementById('adverbRulesBody');
-    const icon = document.getElementById('toggleAdverbIcon');
-    body.classList.toggle('open');
-    icon.textContent = body.classList.contains('open') ? '▼' : '▶';
+  // ========== СВОРАЧИВАЕМЫЕ БЛОКИ ==========
+  function setupCollapsible(headerId, bodyId, iconId) {
+    document.getElementById(headerId).addEventListener('click', () => {
+      const body = document.getElementById(bodyId);
+      const icon = document.getElementById(iconId);
+      body.classList.toggle('open');
+      icon.textContent = body.classList.contains('open') ? '▼' : '▶';
+    });
+  }
+  setupCollapsible('toggleRules', 'rulesBody', 'toggleIcon');
+  setupCollapsible('toggleAdverbRules', 'adverbRulesBody', 'toggleAdverbIcon');
+
+  // ========== SHOW/HIDE TEXT ==========
+  document.getElementById('toggleTextBtn').addEventListener('click', () => {
+    document.getElementById('readingText').classList.toggle('hidden-text');
+    const btn = document.getElementById('toggleTextBtn');
+    btn.textContent = document.getElementById('readingText').classList.contains('hidden-text') ? '📖 Show Text' : '📖 Hide Text';
   });
 
-  // ========== АУДИО ==========
+  // ========== AUDIO PLAYBACK ==========
+  let isPlaying = false;
+  let currentSentence = 0;
+  const sentences = document.querySelectorAll('.text-sentence');
+  
+  document.getElementById('audioBtn').addEventListener('click', () => {
+    if (isPlaying) {
+      speechSynthesis.cancel();
+      isPlaying = false;
+      document.getElementById('audioBtn').textContent = '🔊 Play Audio';
+      sentences.forEach(s => s.classList.remove('highlight'));
+      return;
+    }
+    
+    isPlaying = true;
+    document.getElementById('audioBtn').textContent = '⏸️ Pause Audio';
+    currentSentence = 0;
+    speakNext();
+  });
+
+  function speakNext() {
+    if (!isPlaying || currentSentence >= sentences.length) {
+      isPlaying = false;
+      document.getElementById('audioBtn').textContent = '🔊 Play Audio';
+      sentences.forEach(s => s.classList.remove('highlight'));
+      return;
+    }
+    
+    sentences.forEach(s => s.classList.remove('highlight'));
+    sentences[currentSentence].classList.add('highlight');
+    
+    const text = sentences[currentSentence].textContent;
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'en-US';
+    utterance.rate = 0.8;
+    
+    utterance.onend = () => {
+      currentSentence++;
+      speakNext();
+    };
+    
+    utterance.onerror = () => {
+      currentSentence++;
+      speakNext();
+    };
+    
+    speechSynthesis.speak(utterance);
+  }
+
+  // ========== RETELLING LEVELS ==========
+  document.querySelectorAll('.level-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.level-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const level = btn.dataset.level;
+      document.getElementById('retellLevel1').classList.add('retell-hidden');
+      document.getElementById('retellLevel2').classList.add('retell-hidden');
+      document.getElementById('retellLevel3').classList.add('retell-hidden');
+      document.getElementById('retellLevel' + level).classList.remove('retell-hidden');
+    });
+  });
+
+  // ========== АУДИО (звуки) ==========
   let audioCtx;
   function getCtx() { if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)(); return audioCtx; }
   function playOk() {
@@ -679,18 +871,18 @@
   }
   document.getElementById('resetChooseBtn').addEventListener('click', ()=>{chIdx=0; showChoose();});
 
-  // ========== GRAMMAR: Make Negative & Question ==========
+  // ========== GRAMMAR: Negative & Question ==========
   const negQData = [
     {pos:'Buses usually move slowly in the city.', neg:'Buses don\'t usually move slowly in the city.', q:'Do buses usually move slowly in the city?', tense:'ps'},
     {pos:'The city is always noisy.', neg:'The city isn\'t always noisy.', q:'Is the city always noisy?', tense:'ps'},
     {pos:'People often hurry to work in the morning.', neg:'People don\'t often hurry to work in the morning.', q:'Do people often hurry to work in the morning?', tense:'ps'},
     {pos:'The village has got fields and animals.', neg:'The village hasn\'t got fields and animals.', q:'Has the village got fields and animals?', tense:'ps'},
+    {pos:'Moscow usually sleeps at night.', neg:'Moscow doesn\'t usually sleep at night.', q:'Does Moscow usually sleep at night?', tense:'ps'},
     {pos:'The cars are moving slowly now.', neg:'The cars aren\'t moving slowly now.', q:'Are the cars moving slowly now?', tense:'pc'},
     {pos:'The farmer is feeding chickens at the moment.', neg:'The farmer isn\'t feeding chickens at the moment.', q:'Is the farmer feeding chickens at the moment?', tense:'pc'},
     {pos:'Children are running in the field now.', neg:'Children aren\'t running in the field now.', q:'Are children running in the field now?', tense:'pc'},
     {pos:'The girl is breathing fresh air.', neg:'The girl isn\'t breathing fresh air.', q:'Is the girl breathing fresh air?', tense:'pc'},
-    {pos:'Moscow never sleeps.', neg:'Moscow doesn\'t ever sleep.', q:'Does Moscow ever sleep?', tense:'ps'},
-    {pos:'Tourists often take photos of the Kremlin.', neg:'Tourists don\'t often take photos of the Kremlin.', q:'Do tourists often take photos of the Kremlin?', tense:'ps'}
+    {pos:'Tourists are taking photos of the Kremlin.', neg:'Tourists aren\'t taking photos of the Kremlin.', q:'Are tourists taking photos of the Kremlin?', tense:'pc'}
   ];
   let negQIdx = 0;
   function showNegQ() {
@@ -703,30 +895,16 @@
       <input type="text" class="transform-input neg-inp" placeholder="Write the negative sentence...">
       <div class="neg-q-label">❓ Make interrogative:</div>
       <input type="text" class="transform-input q-inp" placeholder="Write the question...">
-      <button class="btn btn-green" id="checkNegQBtn" style="margin-top:10px;">Check Both</button>`;
+      <button class="btn btn-blue" id="showAnswersBtn" style="margin-top:10px;">Show Possible Answers</button>
+      <div id="answersReveal" style="display:none;margin-top:10px;padding:10px;background:#f0fdf4;border-radius:12px;">
+        <p><strong>Negative:</strong> ${item.neg}</p>
+        <p><strong>Question:</strong> ${item.q}</p>
+      </div>`;
     cont.appendChild(card);
     
-    document.getElementById('checkNegQBtn').addEventListener('click', () => {
-      const negInp = cont.querySelector('.neg-inp').value.trim().toLowerCase();
-      const qInp = cont.querySelector('.q-inp').value.trim().toLowerCase();
-      const fb = document.createElement('p'); fb.className = 'feedback';
-      const negCorrect = negInp === item.neg.toLowerCase();
-      const qCorrect = qInp === item.q.toLowerCase();
-      
-      if (negCorrect && qCorrect) {
-        fb.textContent = '✅ Both correct!';
-        fb.style.color = '#16a34a'; playOk();
-      } else if (negCorrect && !qCorrect) {
-        fb.textContent = '✅ Negative correct, but question needs work. Correct: ' + item.q;
-        fb.style.color = '#f59e0b'; playErr();
-      } else if (!negCorrect && qCorrect) {
-        fb.textContent = '✅ Question correct, but negative needs work. Correct: ' + item.neg;
-        fb.style.color = '#f59e0b'; playErr();
-      } else {
-        fb.textContent = '❌ Both need work. Negative: ' + item.neg + ' | Question: ' + item.q;
-        fb.style.color = '#dc2626'; playErr();
-      }
-      cont.appendChild(fb);
+    document.getElementById('showAnswersBtn').addEventListener('click', () => {
+      const reveal = document.getElementById('answersReveal');
+      reveal.style.display = reveal.style.display === 'none' ? 'block' : 'none';
     });
   }
   document.getElementById('nextNegQBtn').addEventListener('click', () => { negQIdx++; showNegQ(); });
@@ -807,6 +985,75 @@
     cont.appendChild(checkBtn); unsIdx++;
   }
   document.getElementById('nextUnscrambleBtn').addEventListener('click', showUnscramble);
+
+  // ========== GRAMMAR: Adverb Wheel ==========
+  const canvas = document.getElementById('wheelCanvas'), ctx = canvas.getContext('2d');
+  const wheelC = document.getElementById('wheelCenter'), taskCont = document.getElementById('adverbTaskContainer');
+  const adverbs = ['always','usually','often','sometimes','never','now','at the moment','every day'];
+  const adverbTasks = {
+    'always': {sentence:'The city is noisy.', answer:'The city is always noisy.'},
+    'usually': {sentence:'People walk fast in the city.', answer:'People usually walk fast in the city.'},
+    'often': {sentence:'We go to the park in summer.', answer:'We often go to the park in summer.'},
+    'sometimes': {sentence:'Moscow is quiet at night.', answer:'Moscow is sometimes quiet at night.'},
+    'never': {sentence:'The village is noisy.', answer:'The village is never noisy.'},
+    'now': {sentence:'The cars are moving slowly.', answer:'The cars are moving slowly now.'},
+    'at the moment': {sentence:'The farmer is feeding chickens.', answer:'The farmer is feeding chickens at the moment.'},
+    'every day': {sentence:'She walks in the park.', answer:'She walks in the park every day.'}
+  };
+  let wAng = 0;
+  const secCols = ['#8b5cf6','#ec4899','#f97316','#eab308','#14b8a6','#06b6d4','#fbbf24','#a855f7'];
+  function dark(h) { const r=parseInt(h.slice(1,3),16), g=parseInt(h.slice(3,5),16), b=parseInt(h.slice(5,7),16); return (0.2126*r+0.7152*g+0.0722*b)<150; }
+  function drawW(ang=0) {
+    const w=canvas.width, h=canvas.height, cx=w/2, cy=h/2, r=w/2-15, step=2*Math.PI/adverbs.length;
+    ctx.clearRect(0,0,w,h);
+    for (let i=0;i<adverbs.length;i++) {
+      const sa=i*step+ang*Math.PI/180, ea=(i+1)*step+ang*Math.PI/180;
+      ctx.beginPath(); ctx.moveTo(cx,cy); ctx.arc(cx,cy,r,sa,ea); ctx.closePath();
+      ctx.fillStyle=secCols[i%secCols.length]; ctx.fill();
+      ctx.strokeStyle='#fff'; ctx.lineWidth=2; ctx.stroke();
+    }
+    ctx.save(); ctx.translate(cx,cy);
+    ctx.font='bold 14px "Segoe UI", Roboto'; ctx.textAlign='center'; ctx.textBaseline='middle';
+    for (let i=0;i<adverbs.length;i++) {
+      const ma=i*step+step/2+ang*Math.PI/180, tr=r*0.78;
+      const x=Math.cos(ma)*tr, y=Math.sin(ma)*tr;
+      const col=secCols[i%secCols.length];
+      ctx.save(); ctx.translate(x,y); ctx.rotate(ma+Math.PI/2);
+      ctx.fillStyle=dark(col)?'#fff':'#1e293b'; ctx.fillText(adverbs[i],0,0);
+      ctx.restore();
+    }
+    ctx.restore();
+    ctx.fillStyle='#2563eb';
+    ctx.beginPath(); ctx.moveTo(cx,15); ctx.lineTo(cx-14,2); ctx.lineTo(cx+14,2); ctx.closePath();
+    ctx.fill(); ctx.strokeStyle='#fff'; ctx.lineWidth=2; ctx.stroke();
+  }
+  document.getElementById('spinBtn').addEventListener('click', ()=>{
+    playSpin();
+    const deg=360*5+Math.floor(Math.random()*360); wAng+=deg;
+    canvas.style.transform=`rotate(${wAng}deg)`; wheelC.textContent=''; taskCont.innerHTML = '';
+    setTimeout(()=>{
+      const norm=((wAng%360)+360)%360, sl=360/adverbs.length;
+      const word=adverbs[Math.floor(((360-norm)%360)/sl)%adverbs.length];
+      wheelC.textContent = word;
+      const task = adverbTasks[word];
+      const card = document.createElement('div'); card.className = 'transform-card'; card.style.background = '#fffbeb';
+      card.innerHTML = `
+        <p style="font-size:clamp(16px,2.5vw,20px);font-weight:bold;text-align:center;">Put <strong>"${word}"</strong> in the correct place:</p>
+        <p style="font-size:clamp(18px,3vw,24px);text-align:center;margin:10px 0;">${task.sentence}</p>`;
+      const inp = document.createElement('input'); inp.type = 'text'; inp.className = 'transform-input';
+      inp.placeholder = 'Rewrite the sentence correctly...';
+      const btn = document.createElement('button'); btn.className = 'btn btn-green'; btn.textContent = 'Check';
+      btn.addEventListener('click', ()=>{
+        const fb = document.createElement('p'); fb.className = 'feedback';
+        if (inp.value.trim().toLowerCase() === task.answer.toLowerCase()) {
+          fb.textContent = '✅ Correct!'; fb.style.color = '#16a34a'; playOk();
+        } else { fb.textContent = '❌ Correct: ' + task.answer; fb.style.color = '#dc2626'; playErr(); }
+        card.appendChild(fb);
+      });
+      card.appendChild(inp); card.appendChild(btn); taskCont.appendChild(card);
+    },3100);
+  });
+  drawW();
 
   // ========== PRACTICE: Which is Correct? ==========
   const describeData = [
@@ -970,7 +1217,7 @@
     {ru:'Автобусы обычно едут медленно в городе из-за плотного движения.', en:['Buses usually move slowly in the city because of heavy traffic.']},
     {ru:'Люди всегда спешат на работу утром.', en:['People always hurry to work in the morning.']},
     {ru:'В деревне люди часто гуляют и дышат свежим воздухом.', en:['In the village, people often walk and breathe fresh air.']},
-    {ru:'Москва никогда не спит.', en:['Moscow never sleeps.']},
+    {ru:'Москва обычно спит ночью.', en:['Moscow usually sleeps at night.']},
     {ru:'Туристы часто фотографируют Кремль.', en:['Tourists often take photos of the Kremlin.']},
     {ru:'Жизнь в городе обычно быстрая.', en:['Life in the city is usually fast.']}
   ];
@@ -998,74 +1245,6 @@
     card.appendChild(inp); card.appendChild(btn); cont.appendChild(card);
   }
   document.getElementById('nextTranslateBtn').addEventListener('click', ()=>{trIdx++; showTranslate();});
-
-  // ========== READING: True/False ==========
-  const tfReadingData = [
-    {text:'Moscow is the capital of Russia.', ans:true},
-    {text:'Less than 10 million people live in Moscow.', ans:false, corr:'More than 12 million people live in Moscow.'},
-    {text:'The streets in Moscow are always crowded.', ans:true},
-    {text:'There is no traffic in Moscow.', ans:false, corr:'There is heavy traffic in Moscow.'},
-    {text:'Tourists are taking photos at Red Square now.', ans:true},
-    {text:'The Moscow Metro is ugly.', ans:false, corr:'The Moscow Metro is very beautiful.'},
-    {text:'Life in a big city is always easy.', ans:false, corr:'Life in a big city is not always easy.'},
-    {text:'Moscow never sleeps.', ans:true}
-  ];
-  let tfIdx = 0;
-  function showTF() {
-    const cont = document.getElementById('tfContainer'); cont.innerHTML = '';
-    const s = tfReadingData[tfIdx % tfReadingData.length];
-    const p = document.createElement('p');
-    p.style.cssText = 'font-size:clamp(18px,3.5vw,24px);text-align:center;margin:15px 0;font-weight:bold;';
-    p.textContent = s.text; cont.appendChild(p);
-    const row = document.createElement('div'); row.style.cssText = 'display:flex;gap:15px;justify-content:center;';
-    const t = document.createElement('button'); t.className = 'btn btn-green'; t.textContent = '✅ True';
-    const f = document.createElement('button'); f.className = 'btn btn-red'; f.textContent = '❌ False';
-    t.addEventListener('click', () => {
-      const fb = document.createElement('p'); fb.className = 'feedback';
-      if (true === s.ans) { fb.textContent = '✅ Correct!'; fb.style.color = '#16a34a'; playOk(); }
-      else { fb.textContent = '❌ ' + (s.corr || ''); fb.style.color = '#dc2626'; playErr(); }
-      cont.appendChild(fb);
-    });
-    f.addEventListener('click', () => {
-      const fb = document.createElement('p'); fb.className = 'feedback';
-      if (false === s.ans) { fb.textContent = '✅ Correct!'; fb.style.color = '#16a34a'; playOk(); }
-      else { fb.textContent = '❌ ' + (s.corr || ''); fb.style.color = '#dc2626'; playErr(); }
-      cont.appendChild(fb);
-    });
-    row.appendChild(t); row.appendChild(f); cont.appendChild(row); tfIdx++;
-  }
-  document.getElementById('nextTFBtn').addEventListener('click', showTF);
-
-  // ========== READING: Questions ==========
-  const questionsData = [
-    {q:'What is the capital of Russia?', a:['Moscow','Moscow is the capital of Russia.']},
-    {q:'How many people live in Moscow?', a:['More than 12 million','More than 12 million people']},
-    {q:'Why is there heavy traffic in Moscow?', a:['Because the streets are always crowded','The streets are always crowded with people and cars']},
-    {q:'What are tourists doing at Red Square now?', a:['They are taking photos','They are taking photos and walking']},
-    {q:'Why is the Moscow Metro beautiful?', a:['Because some stations look like museums','Some stations look like museums']},
-    {q:'Where do people go in summer in Moscow?', a:['Gorky Park','VDNKh','They go to Gorky Park or VDNKh']},
-    {q:'Why is life in a big city not always easy?', a:['Because the cost of living is high','There is constant noise and pollution']},
-    {q:'Does Moscow sleep at night?', a:['No','No, it never sleeps','No, Moscow never sleeps']}
-  ];
-  let qqIdx = 0;
-  function showQuestions() {
-    const cont = document.getElementById('questionsContainer'); cont.innerHTML = '';
-    const item = questionsData[qqIdx % questionsData.length];
-    const card = document.createElement('div'); card.className = 'transform-card'; card.style.background = '#f0f9ff';
-    card.innerHTML = `<p style="font-size:clamp(18px,3.5vw,24px);font-weight:bold;">${item.q}</p>`;
-    const inp = document.createElement('input'); inp.type = 'text'; inp.className = 'transform-input';
-    inp.placeholder = 'Your answer...';
-    const btn = document.createElement('button'); btn.className = 'btn btn-blue'; btn.textContent = 'Check';
-    btn.addEventListener('click', ()=>{
-      const fb = document.createElement('p'); fb.className = 'feedback';
-      if (item.a.some(a => inp.value.trim().toLowerCase() === a.toLowerCase())) {
-        fb.textContent = '✅ Correct!'; fb.style.color = '#16a34a'; playOk();
-      } else { fb.textContent = '❌ Possible answer: ' + item.a[0]; fb.style.color = '#dc2626'; playErr(); }
-      cont.appendChild(fb);
-    });
-    card.appendChild(inp); card.appendChild(btn); cont.appendChild(card); qqIdx++;
-  }
-  document.getElementById('nextQBtn').addEventListener('click', showQuestions);
 
   // ========== READING: Sort Sentences ==========
   const sortSentences = [
@@ -1118,79 +1297,223 @@
   });
   document.getElementById('resetSortBtn').addEventListener('click', createSort);
 
-  // ========== ADVERB WHEEL ==========
-  const canvas = document.getElementById('wheelCanvas'), ctx = canvas.getContext('2d');
-  const wheelC = document.getElementById('wheelCenter'), taskCont = document.getElementById('adverbTaskContainer');
-  const adverbs = ['always','usually','often','sometimes','never','now','at the moment','every day'];
-  const adverbTasks = {
-    'always': {sentence:'The city is noisy.', answer:'The city is always noisy.'},
-    'usually': {sentence:'People walk fast in the city.', answer:'People usually walk fast in the city.'},
-    'often': {sentence:'We go to the park in summer.', answer:'We often go to the park in summer.'},
-    'sometimes': {sentence:'Moscow is quiet at night.', answer:'Moscow is sometimes quiet at night.'},
-    'never': {sentence:'The village sleeps.', answer:'The village never sleeps.'},
-    'now': {sentence:'The cars are moving slowly.', answer:'The cars are moving slowly now.'},
-    'at the moment': {sentence:'The farmer is feeding chickens.', answer:'The farmer is feeding chickens at the moment.'},
-    'every day': {sentence:'She walks in the park.', answer:'She walks in the park every day.'}
-  };
-  let wAng = 0;
-  const secCols = ['#8b5cf6','#ec4899','#f97316','#eab308','#14b8a6','#06b6d4','#fbbf24','#a855f7'];
-  function dark(h) { const r=parseInt(h.slice(1,3),16), g=parseInt(h.slice(3,5),16), b=parseInt(h.slice(5,7),16); return (0.2126*r+0.7152*g+0.0722*b)<150; }
-  function drawW(ang=0) {
-    const w=canvas.width, h=canvas.height, cx=w/2, cy=h/2, r=w/2-15, step=2*Math.PI/adverbs.length;
-    ctx.clearRect(0,0,w,h);
-    for (let i=0;i<adverbs.length;i++) {
-      const sa=i*step+ang*Math.PI/180, ea=(i+1)*step+ang*Math.PI/180;
-      ctx.beginPath(); ctx.moveTo(cx,cy); ctx.arc(cx,cy,r,sa,ea); ctx.closePath();
-      ctx.fillStyle=secCols[i%secCols.length]; ctx.fill();
-      ctx.strokeStyle='#fff'; ctx.lineWidth=2; ctx.stroke();
-    }
-    ctx.save(); ctx.translate(cx,cy);
-    ctx.font='bold 14px "Segoe UI", Roboto'; ctx.textAlign='center'; ctx.textBaseline='middle';
-    for (let i=0;i<adverbs.length;i++) {
-      const ma=i*step+step/2+ang*Math.PI/180, tr=r*0.78;
-      const x=Math.cos(ma)*tr, y=Math.sin(ma)*tr;
-      const col=secCols[i%secCols.length];
-      ctx.save(); ctx.translate(x,y); ctx.rotate(ma+Math.PI/2);
-      ctx.fillStyle=dark(col)?'#fff':'#1e293b'; ctx.fillText(adverbs[i],0,0);
-      ctx.restore();
-    }
-    ctx.restore();
-    ctx.fillStyle='#2563eb';
-    ctx.beginPath(); ctx.moveTo(cx,15); ctx.lineTo(cx-14,2); ctx.lineTo(cx+14,2); ctx.closePath();
-    ctx.fill(); ctx.strokeStyle='#fff'; ctx.lineWidth=2; ctx.stroke();
+  // ========== READING: True/False ==========
+  const tfReadingData = [
+    {text:'Moscow is the capital of Russia.', ans:true},
+    {text:'Less than 10 million people live in Moscow.', ans:false, corr:'More than 12 million people live in Moscow.'},
+    {text:'The streets in Moscow are always crowded.', ans:true},
+    {text:'There is no traffic in Moscow.', ans:false, corr:'There is heavy traffic in Moscow.'},
+    {text:'Tourists are taking photos at Red Square now.', ans:true},
+    {text:'The Moscow Metro is ugly.', ans:false, corr:'The Moscow Metro is very beautiful.'},
+    {text:'Life in a big city is always easy.', ans:false, corr:'Life in a big city is not always easy.'},
+    {text:'Moscow never sleeps.', ans:true}
+  ];
+  let tfIdx = 0;
+  function showTF() {
+    const cont = document.getElementById('tfContainer'); cont.innerHTML = '';
+    const s = tfReadingData[tfIdx % tfReadingData.length];
+    const p = document.createElement('p');
+    p.style.cssText = 'font-size:clamp(18px,3.5vw,24px);text-align:center;margin:15px 0;font-weight:bold;';
+    p.textContent = s.text; cont.appendChild(p);
+    const row = document.createElement('div'); row.style.cssText = 'display:flex;gap:15px;justify-content:center;';
+    const t = document.createElement('button'); t.className = 'btn btn-green'; t.textContent = '✅ True';
+    const f = document.createElement('button'); f.className = 'btn btn-red'; f.textContent = '❌ False';
+    t.addEventListener('click', () => {
+      const fb = document.createElement('p'); fb.className = 'feedback';
+      if (true === s.ans) { fb.textContent = '✅ Correct!'; fb.style.color = '#16a34a'; playOk(); }
+      else { fb.textContent = '❌ ' + (s.corr || ''); fb.style.color = '#dc2626'; playErr(); }
+      cont.appendChild(fb);
+    });
+    f.addEventListener('click', () => {
+      const fb = document.createElement('p'); fb.className = 'feedback';
+      if (false === s.ans) { fb.textContent = '✅ Correct!'; fb.style.color = '#16a34a'; playOk(); }
+      else { fb.textContent = '❌ ' + (s.corr || ''); fb.style.color = '#dc2626'; playErr(); }
+      cont.appendChild(fb);
+    });
+    row.appendChild(t); row.appendChild(f); cont.appendChild(row); tfIdx++;
   }
-  document.getElementById('spinBtn').addEventListener('click', ()=>{
-    playSpin();
-    const deg=360*5+Math.floor(Math.random()*360); wAng+=deg;
-    canvas.style.transform=`rotate(${wAng}deg)`; wheelC.textContent=''; taskCont.innerHTML = '';
-    setTimeout(()=>{
-      const norm=((wAng%360)+360)%360, sl=360/adverbs.length;
-      const word=adverbs[Math.floor(((360-norm)%360)/sl)%adverbs.length];
-      wheelC.textContent = word;
-      const task = adverbTasks[word];
-      const card = document.createElement('div'); card.className = 'transform-card'; card.style.background = '#fffbeb';
-      card.innerHTML = `
-        <p style="font-size:clamp(16px,2.5vw,20px);font-weight:bold;text-align:center;">Put <strong>"${word}"</strong> in the correct place:</p>
-        <p style="font-size:clamp(18px,3vw,24px);text-align:center;margin:10px 0;">${task.sentence}</p>`;
-      const inp = document.createElement('input'); inp.type = 'text'; inp.className = 'transform-input';
-      inp.placeholder = 'Rewrite the sentence correctly...';
-      const btn = document.createElement('button'); btn.className = 'btn btn-green'; btn.textContent = 'Check';
-      btn.addEventListener('click', ()=>{
-        const fb = document.createElement('p'); fb.className = 'feedback';
-        if (inp.value.trim().toLowerCase() === task.answer.toLowerCase()) {
-          fb.textContent = '✅ Correct!'; fb.style.color = '#16a34a'; playOk();
-        } else { fb.textContent = '❌ Correct: ' + task.answer; fb.style.color = '#dc2626'; playErr(); }
-        card.appendChild(fb);
+  document.getElementById('nextTFBtn').addEventListener('click', showTF);
+
+  // ========== READING: Complete Sentences (ИСПРАВЛЕНО) ==========
+  const completeData = [
+    {text:'Moscow is the capital of ___.', gap:'Russia', opts:['Russia','England','Germany']},
+    {text:'More than ___ million people live in Moscow.', gap:'12', opts:['5','12','20']},
+    {text:'The streets are always ___ with people and cars.', gap:'crowded', opts:['empty','quiet','crowded']},
+    {text:'Tourists are taking ___ at Red Square now.', gap:'photos', opts:['books','photos','bags']},
+    {text:'The Moscow Metro is very ___ — some stations look like museums!', gap:'beautiful', opts:['ugly','small','beautiful']},
+    {text:'In summer, people often go to Gorky Park or ___.', gap:'VDNKh', opts:['the Kremlin','VDNKh','the airport']},
+    {text:'The cost of living in Moscow is ___.', gap:'high', opts:['low','cheap','high']},
+    {text:'Moscow never ___ — at night, the lights are shining.', gap:'sleeps', opts:['stops','sleeps','dies']}
+  ];
+  let compIdx = 0, compShuff = [];
+  function showComplete() {
+    const cont = document.getElementById('completeContainer');
+    if (compIdx === 0) compShuff = [...completeData].sort(()=>Math.random()-0.5);
+    if (compIdx >= compShuff.length) {
+      cont.innerHTML = '<p style="font-size:clamp(20px,4vw,28px);text-align:center;">🎉 All completed!</p>'; return;
+    }
+    cont.innerHTML = '';
+    const item = compShuff[compIdx];
+    const card = document.createElement('div'); card.className = 'choose-card'; card.style.background = '#fef3c7';
+    const parts = item.text.split('___');
+    
+    // Первая часть предложения
+    const beforeSpan = document.createElement('span');
+    beforeSpan.textContent = parts[0];
+    card.appendChild(beforeSpan);
+    
+    // Выпадающий список (как в Choose Tense)
+    const sel = document.createElement('select'); sel.className = 'select-tense';
+    const ph = document.createElement('option'); 
+    ph.textContent = '...'; 
+    ph.value = ''; 
+    ph.disabled = true; 
+    ph.selected = true;
+    sel.appendChild(ph);
+    
+    item.opts.forEach(o => { 
+      const op = document.createElement('option'); 
+      op.value = o; 
+      op.textContent = o; 
+      sel.appendChild(op); 
+    });
+    
+    sel.addEventListener('change', function(e) {
+      if (e.target.value === item.gap) {
+        e.target.style.background = '#16a34a'; 
+        e.target.style.color = 'white'; 
+        e.target.disabled = true;
+        playOk(); 
+        compIdx++; 
+        setTimeout(showComplete, 800);
+      } else {
+        e.target.style.background = '#dc2626'; 
+        e.target.style.color = 'white'; 
+        playErr();
+        setTimeout(()=>{ 
+          e.target.style.background = 'white'; 
+          e.target.style.color = '#1e293b'; 
+          e.target.value = ''; 
+        }, 1000);
+      }
+    });
+    
+    card.appendChild(sel);
+    
+    // Оставшаяся часть предложения
+    if (parts[1]) {
+      const afterSpan = document.createElement('span');
+      afterSpan.textContent = parts[1];
+      card.appendChild(afterSpan);
+    }
+    
+    cont.appendChild(card);
+  }
+  document.getElementById('nextCompleteBtn').addEventListener('click', ()=>{compIdx++; showComplete();});
+
+  // ========== READING: Match Halves ==========
+  const matchHalves = [
+    {left:'Moscow is the capital', right:'of Russia.'},
+    {left:'The streets are always crowded', right:'with people and cars.'},
+    {left:'Tourists are taking photos', right:'at Red Square now.'},
+    {left:'The Moscow Metro is beautiful', right:'because some stations look like museums.'},
+    {left:'Moscow never', right:'sleeps.'},
+    {left:'People often go to', right:'Gorky Park or VDNKh in summer.'},
+    {left:'The cost of living', right:'is high.'},
+    {left:'At night, the lights', right:'are shining.'}
+  ];
+  let matchSel = null, matchCount = 0;
+  const pairCols = ['#a855f7','#ec4899','#14b8a6','#f97316','#06b6d4','#eab308','#fbbf24','#8b5cf6'];
+  function createMatch() {
+    const cont = document.getElementById('matchContainer');
+    cont.innerHTML = '';
+    document.getElementById('matchFeedback').textContent = '';
+    matchCount = 0;
+    const flexRow = document.createElement('div');
+    flexRow.style.cssText = 'display:flex;gap:20px;justify-content:center;flex-wrap:wrap;';
+    
+    const leftCol = document.createElement('div'); leftCol.className = 'match-column';
+    const rightCol = document.createElement('div'); rightCol.className = 'match-column';
+    
+    const leftShuff = [...matchHalves].sort(()=>Math.random()-0.5);
+    const rightShuff = [...matchHalves].sort(()=>Math.random()-0.5);
+    
+    leftShuff.forEach(h => {
+      const item = document.createElement('div'); item.className = 'match-item';
+      item.textContent = h.left; item.dataset.pair = h.left;
+      item.addEventListener('click', function() {
+        if (this.classList.contains('matched')) return;
+        if (matchSel) matchSel.classList.remove('selected');
+        matchSel = this; this.classList.add('selected');
       });
-      card.appendChild(inp); card.appendChild(btn); taskCont.appendChild(card);
-    },3100);
-  });
-  drawW();
+      leftCol.appendChild(item);
+    });
+    
+    rightShuff.forEach(h => {
+      const item = document.createElement('div'); item.className = 'match-item';
+      item.textContent = h.right; item.dataset.pair = h.left;
+      item.addEventListener('click', function() {
+        if (!matchSel || this.classList.contains('matched')) return;
+        const original = matchHalves.find(m => m.left === matchSel.dataset.pair);
+        if (original && original.right === this.textContent) {
+          const colorIdx = matchHalves.findIndex(m => m.left === original.left);
+          const color = pairCols[colorIdx % pairCols.length];
+          matchSel.style.background = color; matchSel.style.color = 'white'; matchSel.classList.add('matched'); matchSel.classList.remove('selected');
+          this.style.background = color; this.style.color = 'white'; this.classList.add('matched');
+          matchCount++;
+          playOk();
+          if (matchCount === matchHalves.length) {
+            document.getElementById('matchFeedback').textContent = '🎉 All pairs matched!';
+          }
+        } else {
+          playErr();
+        }
+        matchSel = null;
+      });
+      rightCol.appendChild(item);
+    });
+    
+    flexRow.appendChild(leftCol);
+    flexRow.appendChild(rightCol);
+    cont.appendChild(flexRow);
+  }
+  document.getElementById('resetMatchBtn').addEventListener('click', createMatch);
+
+  // ========== READING: Questions ==========
+  const questionsData = [
+    {q:'What is the capital of Russia?', a:['Moscow','Moscow is the capital of Russia.']},
+    {q:'How many people live in Moscow?', a:['More than 12 million','More than 12 million people']},
+    {q:'Why is there heavy traffic in Moscow?', a:['Because the streets are always crowded','The streets are always crowded with people and cars']},
+    {q:'What are tourists doing at Red Square now?', a:['They are taking photos','They are taking photos and walking']},
+    {q:'Why is the Moscow Metro beautiful?', a:['Because some stations look like museums','Some stations look like museums']},
+    {q:'Where do people go in summer in Moscow?', a:['Gorky Park','VDNKh','They go to Gorky Park or VDNKh']},
+    {q:'Why is life in a big city not always easy?', a:['Because the cost of living is high','There is constant noise and pollution']},
+    {q:'Does Moscow sleep at night?', a:['No','No, it never sleeps','No, Moscow never sleeps']}
+  ];
+  let qqIdx = 0;
+  function showQuestions() {
+    const cont = document.getElementById('questionsContainer'); cont.innerHTML = '';
+    const item = questionsData[qqIdx % questionsData.length];
+    const card = document.createElement('div'); card.className = 'transform-card'; card.style.background = '#f0f9ff';
+    card.innerHTML = `<p style="font-size:clamp(18px,3.5vw,24px);font-weight:bold;">${item.q}</p>`;
+    const inp = document.createElement('input'); inp.type = 'text'; inp.className = 'transform-input';
+    inp.placeholder = 'Your answer...';
+    const btn = document.createElement('button'); btn.className = 'btn btn-blue'; btn.textContent = 'Check';
+    btn.addEventListener('click', ()=>{
+      const fb = document.createElement('p'); fb.className = 'feedback';
+      if (item.a.some(a => inp.value.trim().toLowerCase() === a.toLowerCase())) {
+        fb.textContent = '✅ Correct!'; fb.style.color = '#16a34a'; playOk();
+      } else { fb.textContent = '❌ Possible answer: ' + item.a[0]; fb.style.color = '#dc2626'; playErr(); }
+      cont.appendChild(fb);
+    });
+    card.appendChild(inp); card.appendChild(btn); cont.appendChild(card); qqIdx++;
+  }
+  document.getElementById('nextQBtn').addEventListener('click', showQuestions);
 
   // ========== ИНИЦИАЛИЗАЦИЯ ==========
   showOdd(); showChoose(); showNegQ(); showCorrect(); showUnscramble();
   showDescribe(); showDescPicture(); showTranslate();
-  showTF(); showQuestions(); createSort();
+  createSort(); showTF(); showComplete(); createMatch(); showQuestions();
 </script>
 </body>
 </html>
