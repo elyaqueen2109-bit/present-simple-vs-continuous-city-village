@@ -40,10 +40,7 @@
       border: 2px solid #c7d2fe;
       transition: 0.2s;
     }
-    .review-link:hover {
-      background: #c7d2fe;
-      transform: scale(1.03);
-    }
+    .review-link:hover { background: #c7d2fe; transform: scale(1.03); }
 
     .main-tabs {
       display: flex; gap: 6px; margin-bottom: 18px;
@@ -231,10 +228,7 @@
     }
     .reading-text.hidden-text { display: none; }
     .reading-text .highlight {
-      background: #fef3c7;
-      padding: 4px 0;
-      border-radius: 4px;
-      transition: background 0.3s;
+      background: #fef3c7; padding: 4px 0; border-radius: 4px; transition: background 0.3s;
     }
 
     .word-bank {
@@ -307,15 +301,13 @@
     .sort-sentence.selected { border-color: #2563eb; background: #dbeafe; }
 
     .match-column {
-      display: flex; flex-direction: column; gap: 8px;
-      min-width: 150px;
+      display: flex; flex-direction: column; gap: 8px; min-width: 150px;
     }
     .match-item {
       padding: 8px 14px; border-radius: 12px;
       font-size: clamp(13px, 2vw, 16px); font-weight: 500;
       cursor: pointer; border: 2px solid #e2e8f0;
-      background: #f8fafc; text-align: center;
-      transition: 0.2s;
+      background: #f8fafc; text-align: center; transition: 0.2s;
     }
     .match-item:hover { background: #f1f5f9; transform: scale(1.02); }
     .match-item.selected { border-color: #2563eb; background: #dbeafe; }
@@ -535,7 +527,7 @@
       <p class="text-sentence">Look at Red Square now! Tourists <strong>are taking</strong> photos. Some people <strong>are walking</strong> near the Kremlin. The bells of the Spasskaya Tower <strong>are ringing</strong> at the moment.</p>
       <p class="text-sentence">Moscow has got convenient public transport. You can travel by metro, bus, or tram. The Moscow Metro is very beautiful — some stations look like museums! There are also many parks and green zones. In summer, people often go to Gorky Park or VDNKh. They walk, ride bikes, and enjoy the fresh air.</p>
       <p class="text-sentence">But life in a big city is not always easy. The cost of living is high. There is constant noise and pollution. Some people feel tired of the <strong>hustle and bustle</strong>.</p>
-      <p class="text-sentence">However, Moscow never sleeps. At night, the lights are shining, and the city is still alive.</p>
+      <p class="text-sentence">However, Moscow never sleeps. At night, the lights <strong>shine</strong>, and the city <strong>is</strong> still alive.</p>
     </div>
 
     <div class="main-tabs" style="margin-top:15px;">
@@ -616,7 +608,7 @@
         <p>4. What transport does Moscow have? <span class="retell-hint">(metro, bus, tram, beautiful stations)</span></p>
         <p>5. Where do people go in summer? <span class="retell-hint">(Gorky Park, VDNKh, ride bikes, fresh air)</span></p>
         <p>6. Why is life not always easy? <span class="retell-hint">(cost of living, noise, pollution)</span></p>
-        <p>7. Does Moscow sleep at night? <span class="retell-hint">(never sleeps, lights shining)</span></p>
+        <p>7. Does Moscow sleep at night? <span class="retell-hint">(never sleeps, lights shine, still alive)</span></p>
       </div>
       <div id="retellLevel2" class="retell-plan retell-hidden">
         <p>1. What is Moscow?</p>
@@ -628,7 +620,7 @@
         <p>7. Does Moscow sleep at night?</p>
       </div>
       <div id="retellLevel3" class="retell-plan retell-hidden">
-        <p>capital · 12 million · biggest / crowded · heavy traffic · walk fast / tourists · photos · bells / metro · bus · tram · beautiful stations / Gorky Park · VDNKh · ride bikes · fresh air / cost of living · noise · pollution / never sleeps · lights shining</p>
+        <p>capital · 12 million · biggest / crowded · heavy traffic · walk fast / tourists · photos · bells / metro · bus · tram · beautiful stations / Gorky Park · VDNKh · ride bikes · fresh air / cost of living · noise · pollution / never sleeps · lights shine · still alive</p>
       </div>
       
       <div class="transform-card" style="background:#f8fafc;">
@@ -1255,7 +1247,7 @@
     {text:'Tourists are taking photos.', tense:'pc'},
     {text:'The bells are ringing at the moment.', tense:'pc'},
     {text:'Some people are walking near the Kremlin.', tense:'pc'},
-    {text:'The lights are shining at night.', tense:'pc'}
+    {text:'The lights shine at night.', tense:'ps'}
   ];
   let sortSel = null;
   function createSort() {
@@ -1306,7 +1298,7 @@
     {text:'Tourists are taking photos at Red Square now.', ans:true},
     {text:'The Moscow Metro is ugly.', ans:false, corr:'The Moscow Metro is very beautiful.'},
     {text:'Life in a big city is always easy.', ans:false, corr:'Life in a big city is not always easy.'},
-    {text:'Moscow never sleeps.', ans:true}
+    {text:'At night, the lights of Moscow shine.', ans:true}
   ];
   let tfIdx = 0;
   function showTF() {
@@ -1334,7 +1326,7 @@
   }
   document.getElementById('nextTFBtn').addEventListener('click', showTF);
 
-  // ========== READING: Complete Sentences (ИСПРАВЛЕНО) ==========
+  // ========== READING: Complete Sentences ==========
   const completeData = [
     {text:'Moscow is the capital of ___.', gap:'Russia', opts:['Russia','England','Germany']},
     {text:'More than ___ million people live in Moscow.', gap:'12', opts:['5','12','20']},
@@ -1343,7 +1335,7 @@
     {text:'The Moscow Metro is very ___ — some stations look like museums!', gap:'beautiful', opts:['ugly','small','beautiful']},
     {text:'In summer, people often go to Gorky Park or ___.', gap:'VDNKh', opts:['the Kremlin','VDNKh','the airport']},
     {text:'The cost of living in Moscow is ___.', gap:'high', opts:['low','cheap','high']},
-    {text:'Moscow never ___ — at night, the lights are shining.', gap:'sleeps', opts:['stops','sleeps','dies']}
+    {text:'At night, the lights ___, and the city is still alive.', gap:'shine', opts:['shine','are shining','shines']}
   ];
   let compIdx = 0, compShuff = [];
   function showComplete() {
@@ -1356,57 +1348,22 @@
     const item = compShuff[compIdx];
     const card = document.createElement('div'); card.className = 'choose-card'; card.style.background = '#fef3c7';
     const parts = item.text.split('___');
-    
-    // Первая часть предложения
-    const beforeSpan = document.createElement('span');
-    beforeSpan.textContent = parts[0];
-    card.appendChild(beforeSpan);
-    
-    // Выпадающий список (как в Choose Tense)
+    const beforeSpan = document.createElement('span'); beforeSpan.textContent = parts[0]; card.appendChild(beforeSpan);
     const sel = document.createElement('select'); sel.className = 'select-tense';
-    const ph = document.createElement('option'); 
-    ph.textContent = '...'; 
-    ph.value = ''; 
-    ph.disabled = true; 
-    ph.selected = true;
+    const ph = document.createElement('option'); ph.textContent = '...'; ph.value = ''; ph.disabled = true; ph.selected = true;
     sel.appendChild(ph);
-    
-    item.opts.forEach(o => { 
-      const op = document.createElement('option'); 
-      op.value = o; 
-      op.textContent = o; 
-      sel.appendChild(op); 
-    });
-    
+    item.opts.forEach(o => { const op = document.createElement('option'); op.value = o; op.textContent = o; sel.appendChild(op); });
     sel.addEventListener('change', function(e) {
       if (e.target.value === item.gap) {
-        e.target.style.background = '#16a34a'; 
-        e.target.style.color = 'white'; 
-        e.target.disabled = true;
-        playOk(); 
-        compIdx++; 
-        setTimeout(showComplete, 800);
+        e.target.style.background = '#16a34a'; e.target.style.color = 'white'; e.target.disabled = true;
+        playOk(); compIdx++; setTimeout(showComplete, 800);
       } else {
-        e.target.style.background = '#dc2626'; 
-        e.target.style.color = 'white'; 
-        playErr();
-        setTimeout(()=>{ 
-          e.target.style.background = 'white'; 
-          e.target.style.color = '#1e293b'; 
-          e.target.value = ''; 
-        }, 1000);
+        e.target.style.background = '#dc2626'; e.target.style.color = 'white'; playErr();
+        setTimeout(()=>{ e.target.style.background = 'white'; e.target.style.color = '#1e293b'; e.target.value = ''; }, 1000);
       }
     });
-    
     card.appendChild(sel);
-    
-    // Оставшаяся часть предложения
-    if (parts[1]) {
-      const afterSpan = document.createElement('span');
-      afterSpan.textContent = parts[1];
-      card.appendChild(afterSpan);
-    }
-    
+    if (parts[1]) { const afterSpan = document.createElement('span'); afterSpan.textContent = parts[1]; card.appendChild(afterSpan); }
     cont.appendChild(card);
   }
   document.getElementById('nextCompleteBtn').addEventListener('click', ()=>{compIdx++; showComplete();});
@@ -1417,10 +1374,10 @@
     {left:'The streets are always crowded', right:'with people and cars.'},
     {left:'Tourists are taking photos', right:'at Red Square now.'},
     {left:'The Moscow Metro is beautiful', right:'because some stations look like museums.'},
-    {left:'Moscow never', right:'sleeps.'},
+    {left:'At night, the lights', right:'shine and the city is alive.'},
     {left:'People often go to', right:'Gorky Park or VDNKh in summer.'},
     {left:'The cost of living', right:'is high.'},
-    {left:'At night, the lights', right:'are shining.'}
+    {left:'Moscow never', right:'sleeps.'}
   ];
   let matchSel = null, matchCount = 0;
   const pairCols = ['#a855f7','#ec4899','#14b8a6','#f97316','#06b6d4','#eab308','#fbbf24','#8b5cf6'];
@@ -1488,7 +1445,7 @@
     {q:'Why is the Moscow Metro beautiful?', a:['Because some stations look like museums','Some stations look like museums']},
     {q:'Where do people go in summer in Moscow?', a:['Gorky Park','VDNKh','They go to Gorky Park or VDNKh']},
     {q:'Why is life in a big city not always easy?', a:['Because the cost of living is high','There is constant noise and pollution']},
-    {q:'Does Moscow sleep at night?', a:['No','No, it never sleeps','No, Moscow never sleeps']}
+    {q:'What happens at night in Moscow?', a:['The lights shine','The lights shine and the city is alive','It never sleeps']}
   ];
   let qqIdx = 0;
   function showQuestions() {
